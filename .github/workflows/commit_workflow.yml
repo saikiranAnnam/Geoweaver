@@ -33,7 +33,8 @@ jobs:
       - name: Save Geoweaver JaCoCo HTML Report
         uses: actions/upload-artifact@v3
         with:
-          name: geoweaver-jacoco-coverage-report-${{ github.run_id }}
+          name: geoweaver-jacoco-coverage-report-${{ github.run_id }}-${{ job.name }}
+
           path: target/site/jacoco
 
   test-mysql:
@@ -84,7 +85,8 @@ jobs:
     - name: Save Geoweaver JaCoCo HTML Report
       uses: actions/upload-artifact@v3
       with:
-        name: geoweaver-jacoco-coverage-report-${{ github.run_id }}
+        name: geoweaver-jacoco-coverage-report-${{ github.run_id }}-${{ job.name }}
+
         path: target/site/jacoco
 
   test-postgresql:
@@ -135,5 +137,5 @@ jobs:
     - name: Save Geoweaver JaCoCo HTML Report
       uses: actions/upload-artifact@v3
       with:
-        name: geoweaver-jacoco-coverage-report-${{ github.run_id }}
+        name: geoweaver-jacoco-coverage-report-${{ github.run_id }}-${{ job.name }}
         path: target/site/jacoco
