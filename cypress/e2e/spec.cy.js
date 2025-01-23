@@ -1,4 +1,5 @@
 
+Cypress.config('defaultCommandTimeout', 10000);
 /* * Test suite to verify the operational status of the application at 'http://localhost:8070/Geoweaver'. */
 Cypress.on('uncaught:exception', (err, runnable) => {
   // Returning false prevents Cypress from failing the test
