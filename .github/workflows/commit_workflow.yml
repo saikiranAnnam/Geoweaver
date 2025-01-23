@@ -29,12 +29,11 @@ jobs:
           else
             echo "Tests failed."
             exit 1  # Exit with an error code to stop the workflow
-          fi
 
       - name: Save Geoweaver JaCoCo HTML Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: geoweaver-jacoco-coverage-report
+          name: geoweaver-jacoco-coverage-report-${{ github.run_id }}
           path: target/site/jacoco
 
   test-mysql:
@@ -81,12 +80,11 @@ jobs:
         else
           echo "Tests failed."
           exit 1  # Exit with an error code to stop the workflow
-        fi
 
     - name: Save Geoweaver JaCoCo HTML Report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
-        name: geoweaver-jacoco-coverage-report
+        name: geoweaver-jacoco-coverage-report-${{ github.run_id }}
         path: target/site/jacoco
 
   test-postgresql:
@@ -133,10 +131,9 @@ jobs:
         else
           echo "Tests failed."
           exit 1  # Exit with an error code to stop the workflow
-        fi
 
     - name: Save Geoweaver JaCoCo HTML Report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
-        name: geoweaver-jacoco-coverage-report
+        name: geoweaver-jacoco-coverage-report-${{ github.run_id }}
         path: target/site/jacoco
